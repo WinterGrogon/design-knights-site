@@ -12,7 +12,11 @@
 
     background-color: $white;
 
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $z-index-header;
 
     &__logo{
         height: 60%;

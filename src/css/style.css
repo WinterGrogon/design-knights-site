@@ -125,7 +125,12 @@ body {
   margin-inline: auto;
   padding: 20px;
   background-color: #FFFFFF;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2000;
 }
 .header__logo {
   height: 60%;
