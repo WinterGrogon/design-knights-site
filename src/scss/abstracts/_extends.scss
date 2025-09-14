@@ -1,0 +1,156 @@
+// Hover эффекты
+%hover-text {
+    transition: color 300ms ease-out;
+    cursor: pointer;
+
+    &:hover {
+        color: $accent-color;
+    }
+}
+
+%hover-icon {
+    cursor: pointer;
+
+    & path {
+        transition: fill 300ms ease-in-out;
+        fill: $text-color;
+    }
+
+    &:hover path {
+        fill: $accent-color;
+    }
+}
+
+%hover-scale {
+    transition: transform 300ms ease-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+%active-color {
+    transition: filter 300ms ease-out;
+    cursor: pointer;
+
+    &:active {
+        filter: hue-rotate(15deg);
+    }
+}
+
+%hover-and-active {
+    @extend %hover-scale;
+    @extend %active-color;
+    transition: transform 300ms ease-out, filter 300ms ease-out;
+}
+
+// Flex утилиты
+%flex-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+%flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+%flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// Размеры
+%full-size {
+    width: 100%;
+    height: 100%;
+}
+
+%full-width {
+    width: 100%;
+}
+
+%full-height {
+    height: 100%;
+}
+
+// Позиционирование
+%absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// Текст
+%text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%text-break {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+// Интерактивность
+%clickable {
+    cursor: pointer;
+    user-select: none;
+}
+
+%no-select {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+// Анимации
+%fade-in {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+
+    &.active,
+    &:hover {
+        opacity: 1;
+    }
+}
+
+%slide-up {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 300ms ease-out, opacity 300ms ease-out;
+
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

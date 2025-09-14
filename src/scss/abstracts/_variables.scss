@@ -1,0 +1,70 @@
+// Breakpoints
+$viewport-max: 1920px;
+$viewport-min: 280px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Grid
+$container-width: 1330px;
+$container-padding: 15px;
+$grid-gap: 20px;
+
+// Base colors
+$white: #FFFFFF;
+$black: #000000;
+$gray: #EAEAEA;
+$dark-gray: #343434;
+$red: #FF055F;
+$blue: #0BB6FF;
+
+// Semantic colors
+$title-color: $black;
+$text-color: $dark-gray;
+$text-second-color: $white;
+
+$accent-color: $blue;
+$accent-second-color: $red;
+
+$button-color: $blue;
+$button-second-color: $black;
+
+$link-color: $blue;
+
+$footer-bg: $black;
+
+$border-light: $gray;
+$text-muted: $gray;
+
+// Gradients
+// Здесь можно добавить градиенты, например:
+// $section-gradient: linear-gradient(45deg, $gray-700 0%, $gray-800 100%);
+
+// Typography
+$title-font: pr-montserrat, sans-serif;
+$text-font: pr-montserrat, sans-serif;
+$sectuin-number-font: pr-proto-sans, sans-serif;
+
+// Font Sizes - от малого к большому
+$font-size-base: 16px;    // Базовый размер текста
+$font-size-lg: 32px;    // Большой текст
+$font-size-xl: 58px;    // Очень большой текст
+$font-size-2xl: 80px;    // Заголовок секции
+
+$line-height-base: 1.5;
+$line-height-tight: 1.2;
+$line-height-relaxed: 1.8;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing-xs: $spacing-unit;
+$spacing-sm: $spacing-unit * 2;
+$spacing-md: $spacing-unit * 3;
+$spacing-lg: $spacing-unit * 4;
+$spacing-xl: $spacing-unit * 5;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;

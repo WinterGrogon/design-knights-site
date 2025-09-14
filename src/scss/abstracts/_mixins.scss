@@ -1,0 +1,51 @@
+// ================================================
+// Миксин для позиционирования секции
+// ================================================
+@mixin section-position($z-index: 2) {
+    position: relative;
+
+    &__content {
+        position: relative;
+        z-index: $z-index;
+    }
+
+    &__background {
+        position: absolute;
+        inset: 0;
+    }
+
+    &__content, &__background {
+        @extend %full-size;
+    }
+}
+
+// ====================================================
+// Миксин для создания адаптивного стиля
+// ====================================================
+@mixin adaptive-style($property, $pc-font-size, $mobile-font-size) {
+    $add-size: $pc-font-size - $mobile-font-size;
+
+    @if (unit($add-size) == px) {
+        $add-size: strip-unit($add-size);
+    }
+
+    @if (unit($add-size) == rem) {
+        $add-size: strip-unit($add-size) * $font-size-base;
+    }
+
+    #{$property}: calc(#{$mobile-font-size} + #{strip-unit($add-size)} * ((100dvw - #{$viewport-min + px}) / (#{$viewport-max} - #{$viewport-min})));
+}
+
+// ====================================================
+// Миксин для адаптивного размера шрифта
+// ====================================================
+@mixin adaptive-font($pc-font-size, $mobile-font-size) {
+    @include adaptive-style('font-size', $pc-font-size, $mobile-font-size);
+}
+
+// ================================================
+// Миксин для адаптивной высоты строки
+// ================================================
+@mixin adaptive-line-height($pc-line-height, $mobile-line-height) {
+    @include adaptive-style('line-height', $pc-line-height, $mobile-line-height);
+}

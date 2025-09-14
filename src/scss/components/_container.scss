@@ -1,0 +1,7 @@
+// Container
+.container {
+    @extend %full-size;
+    max-width: $container-width;
+    margin-inline: auto;
+    padding: 0 $grid-gap;
+}
