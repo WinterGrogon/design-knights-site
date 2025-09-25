@@ -1,32 +1,43 @@
 // Header
 .header {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: $z-index-header;
 
-    &:has(.header__req-button>input:checked) > .header__form {
-        animation: active-modal 1s ease 0s 1 both;
-    }
+    // Активация окна с формой
+    &:has(.header__req-button>input:checked) {
 
-    &:has(.header__req-button>input:not(:checked)) > .header__form {
-        animation: not-active-modal 1s ease both;
+        .modal {
+            opacity: 1;
+            z-index: $z-index-modal;
+        }
+
+        .modal__content {
+            top: 50dvh;
+            transform: translate(-50%, -50%);
+        }
     }
 
     &__content {
+        // Содержимое header
         display: flex;
         justify-content: space-between;
         align-items: center;
+        column-gap: $grid-gap;
 
         width: min(1700px, 90dvw);
-        height: 100px;
+        height: $header-height;
 
         margin-inline: auto;
         padding: $grid-gap;
 
         background-color: $white;
 
+        // Позиционирование контента
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: $z-index-header;
+
+        // Полоска снизу
         &::after {
             content: "";
             position: absolute;
@@ -66,6 +77,7 @@
             width: 21px;
             height: 23px;
             background: url("../img/icons/form-btn--open.svg") center / cover no-repeat;
+            flex-shrink: 0;
         }
 
         &:hover {
@@ -77,19 +89,7 @@
         }
 
         input {
-            // display: none;
+            display: none;
         }
-    }
-
-    &__form {
-        display: none;
-        position: absolute;
-        top: 50dvh;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        z-index: $z-index-modal;
-        
-        transform-origin: center;
-        transition: transform .2s ease;
     }
 }
