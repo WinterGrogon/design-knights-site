@@ -1,0 +1,48 @@
+.request {
+    width: min(754px, 100%);
+    padding: min(60px, 8%);
+
+    background-color: $white;
+    border-radius: $grid-gap;
+
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: $font-size-lg;
+        margin-bottom: min(60px, 5dvh);
+    }
+    
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        input {
+            width: 100%;
+            height: 55px;
+            
+            padding: $grid-gap;
+            margin-bottom: min(60px, 5dvh);
+
+            background-color: $gray;
+            
+            border-radius: $grid-gap;
+            border: none;
+            
+            &::placeholder {
+                color: $text-second-color;
+            }
+        }
+    }
+    
+    &__submit {
+        width: min(300px, 100%);
+        height: 73px;
+        
+        background-color: $blue;
+        color: $text-second-color;
+
+        border-radius: $grid-gap;
+        border: none;
+    }
+}

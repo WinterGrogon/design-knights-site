@@ -12,13 +12,27 @@
 
 <body>
     <header class="header">
-        <a class="header__logo" href="#">
-            <img class="header__logo-src" src="./src/img/icons/logo.png" alt="Design Knights">
-        </a>
-        
-        <div class="header__req-button">
-            <label for="req">Оставить заявку</label>
-            <input type="checkbox" id="req">
+        <div class="header__content">
+            <a class="header__logo" href="#">
+                <img class="header__logo-src" src="./src/img/icons/logo.png" alt="Design Knights">
+            </a>
+
+            <div class="header__req-button">
+                <label for="req">Оставить заявку</label>
+                <input type="checkbox" id="req">
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="header__form modal__content request">
+                <h2 class="request__title">Оставить заявку</h2>
+
+                <form action="#!" class="request__form">
+                    <input type="text" class="request__name" placeholder="Имя">
+                    <input type="email" class="request__mail" placeholder="Почта">
+                    <button class="request__submit">Подтвердить</button>
+                </form>
+            </div>
         </div>
     </header>
 </body>
