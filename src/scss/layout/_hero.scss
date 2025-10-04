@@ -1,0 +1,82 @@
+.hero {
+    @include section-position;
+    height: 100dvh;
+
+    $background-width-main: 1920 - 900;
+    $background-height-main: 1080 - 95;
+
+    $general-image-width: 772;
+    $general-image-height: 669;
+
+    $panel-height: 332;
+
+    $blob-height-main: 750;
+
+    &__content {
+        width: calc(100% - #{$background-width-main}px);
+        padding-top: $header-height + $grid-gap;
+    }
+
+    &__background-main {
+        height: ($background-height-main) / 1080 * 100%;
+        aspect-ratio: 1023 / 806;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__blob {
+        height: $blob-height-main / $background-height-main * 100%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__general-image {
+        height: $general-image-height / $background-height-main * 100%;
+        aspect-ratio: $general-image-width / $general-image-height;
+
+        padding-left: $grid-gap;
+
+        border: 4px solid rgba(255, 255, 255, 1);
+        border-radius: 20px;
+        box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.8);
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    &__panel {
+        height: $panel-height / $general-image-height * 100%;
+
+        position: absolute;
+        top: $grid-gap;
+        left: 0;
+        transform: translateX(-75%);
+        z-index: 2;
+    }
+
+    &__background-mobile {
+        display: none;
+
+        &>img {
+            width: 100%;
+        }
+    }
+
+    @media screen and ((max-width: $breakpoint-md) or (orientation: portrait)) {
+        &__background-main {
+            display: none;
+        }
+
+        &__background-mobile {
+            display: block;
+        }
+    }
+}
