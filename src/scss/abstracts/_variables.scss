@@ -1,6 +1,6 @@
 // Breakpoints
-$viewport-max: 1920px;
-$viewport-min: 280px;
+$viewport-max: 1920;
+$viewport-min: 375;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
@@ -45,13 +45,18 @@ $text-muted: $gray;
 // Typography
 $title-font: pr-montserrat, sans-serif;
 $text-font: pr-montserrat, sans-serif;
-$sectuin-number-font: pr-proto-sans, sans-serif;
+$section-number-font: pr-proto-sans, sans-serif;
 
 // Font Sizes - от малого к большому
 $font-size-base: 16px;    // Базовый размер текста
 $font-size-lg: 32px;    // Большой текст
 $font-size-xl: 58px;    // Очень большой текст
 $font-size-2xl: 80px;    // Заголовок секции
+
+// $font-size-base: 16px;    // Базовый размер текста
+// $font-size-lg: 32px;    // Большой текст
+$font-size-xl-mobile: 36px;    // Очень большой текст
+$font-size-2xl-mobile: 58px;    // Заголовок секции
 
 $line-height-base: 1.5;
 $line-height-tight: 1.2;
