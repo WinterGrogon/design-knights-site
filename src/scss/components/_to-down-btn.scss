@@ -1,0 +1,18 @@
+.to-down-btn {
+    width: fit-content;
+
+    .btn-wrapper {
+        width: fit-content;
+        padding: $grid-gap;
+
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid #0bb6ff;
+        border-radius: 50%;
+
+        transition: transform .2s ease;
+    }
+
+    &:hover > .btn-wrapper {
+        transform: translateY(-10px);
+    }
+}
