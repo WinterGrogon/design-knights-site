@@ -13,8 +13,35 @@
     $blob-height-main: 750;
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: $grid-gap;
+
         width: calc(100% - #{$background-width-main}px);
-        padding-top: $header-height + $grid-gap;
+        min-width: 475px;
+        padding-block: $header-height + $grid-gap;
+        padding-left: 150 / 1920 * 100dvw;
+
+        &>.to-down-btn {
+            flex: 0 0 auto;
+        }
+
+        @media screen and (max-width: 475px) {
+            width: 100%;
+            min-width: auto;
+            padding-right: 150 / 1920 * 100dvw;
+        }
+    }
+
+    &__title {
+        @include adaptive-font($font-size-xl, $font-size-xl-mobile);
+        font-weight: 700;
+        line-height: 1;
+
+        &::first-letter {
+            @include adaptive-font($font-size-2xl, $font-size-2xl-mobile);
+        }
     }
 
     &__background-main {
@@ -65,8 +92,15 @@
     &__background-mobile {
         display: none;
 
+        width: 100%;
+        height: 100%;
+
         &>img {
             width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: top right;
         }
     }
 
