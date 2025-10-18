@@ -246,6 +246,9 @@ body {
 .hero__title::first-letter {
   font-size: calc(58px + 22 * (100dvw - 375px) / (1920 - 375));
 }
+.hero__background {
+  background: radial-gradient(50.48% 64.2% at 2% 1%, rgba(255, 84.2350082397, 46.75, 0.2), rgba(255, 84.2349700928, 46.75, 0) 100%);
+}
 .hero__background-main {
   height: 91.2037037037%;
   aspect-ratio: 1023/806;
