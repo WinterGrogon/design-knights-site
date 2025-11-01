@@ -1,0 +1,199 @@
+.about {
+    .container {
+        position: relative;
+    }
+
+    .section-name {
+        @include section-name-and-number($number: "1", $name: "О нас");
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 308px);
+        gap: $grid-gap;
+        grid-template-areas: 'lay lay ic'
+            'lay lay ic'
+            'lay lay frm'
+            'p1 p1 cicl'
+            'cycl cycl cycl'
+            'grad p2 p2';
+    }
+
+    &__card {
+        border-radius: $grid-gap;
+        overflow: hidden;
+
+        &--layouts {
+            grid-area: lay;
+            padding: 21px 18px 21px 32px;
+
+            img {
+                border-radius: 20px;
+                box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+                margin-bottom: 36px;
+            }
+
+            h2 {
+                font-size: 58px;
+                font-weight: 700;
+                line-height: 100%;
+                letter-spacing: 0%;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0%;
+            }
+        }
+
+        &--icons {
+            grid-area: ic;
+            text-align: right;
+            padding: 21px 18px 21px 32px;
+
+            img {
+                display: block;
+                margin-bottom: 50px;
+                border-radius: 20px;
+                transform: translateX(18px);
+            }
+
+            h3 {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 100%;
+                letter-spacing: 0%;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0%;
+            }
+        }
+
+        &--forms {
+            grid-area: frm;
+
+            display: flex;
+            justify-content: space-between;
+
+            padding: 37px 33px 38px 25px;
+
+            img {
+                max-height: 100%;
+
+                border-radius: 10px;
+                box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            h3 {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 100%;
+                letter-spacing: 0%;
+                transform: translateX(-50%) translateY(-20%) rotate(90deg);
+            }
+        }
+
+        &--picture1 {
+            grid-area: p1;
+        }
+
+        &--anim-circles {
+            grid-area: cicl;
+        }
+
+        &--cycle {
+            grid-area: cycl;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 46px;
+
+            padding: 26px 23px 31px 12px;
+
+            img {
+                flex: 0 0 auto;
+                border-radius: 20px;
+                box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+                background: rgba(245, 245, 247, 1);
+            }
+
+            h2 {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: right;
+                order: 3;
+                flex-grow: 1;
+            }
+
+            p {
+                order: 2;
+                width: 12.5%;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: right;
+            }
+        }
+
+        &--gradient {
+            grid-area: grad;
+        }
+
+        &--picture2 {
+            grid-area: p2;
+        }
+
+        &--layouts,
+        &--icons,
+        &--forms,
+        &--cycle {
+            background-color: $gray;
+        }
+
+        &--anim-circle {
+            position: relative;
+
+            img:first-of-type {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            img:last-of-type {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(60%, -50%);
+
+                box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+                background: $white;
+                border-radius: 50%;
+            }
+        }
+
+        &--gradient {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(-43.06deg, rgba(255, 5, 95, 1), rgba(10.625004768371582, 181.6874542236328, 255, 1) 100%), radial-gradient(72.25% 85.76% at 28.999999999999996% 97%, rgba(255, 84.2350082397461, 46.75, 1), rgba(255, 84.23497009277344, 46.75, 0) 100%);
+            color: $text-second-color;
+            font-weight: 700;
+        }
+    }
+}

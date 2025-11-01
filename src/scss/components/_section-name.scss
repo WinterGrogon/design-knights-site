@@ -1,0 +1,28 @@
+.section-name {
+    display: flex;
+    align-items: flex-start;
+    column-gap: $grid-gap;
+
+    font-family: $section-number-font;
+    font-weight: 400;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(calc(100% + $grid-gap), -50%);
+
+    &::before {
+        font-size: $font-size-2xl;
+        line-height: 1;
+    }
+
+    &::after {
+        font-size: $font-size-lg;
+        transform-origin: left top;
+        transform: rotate(90deg) translateY(calc(-50% - $grid-gap)) translateX(16px);
+    }
+
+    @media screen and (max-width: $breakpoint-2xl) {
+        scale: 0;
+    }
+}
