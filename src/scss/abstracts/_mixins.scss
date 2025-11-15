@@ -49,3 +49,17 @@
 @mixin adaptive-line-height($pc-line-height, $mobile-line-height) {
     @include adaptive-style('line-height', $pc-line-height, $mobile-line-height);
 }
+
+
+// ================================================
+// Миксин для нумерации и наименовая секций
+// ================================================ 
+@mixin section-name-and-number($name, $number) {
+    &::before {
+        content: $number;
+    }
+
+    &::after {
+        content: $name;
+    }
+}

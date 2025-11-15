@@ -5,6 +5,7 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+$breakpoint-2xl: 1650px;
 
 // Grid
 $container-width: 1330px;
@@ -53,8 +54,8 @@ $font-size-lg: 32px;    // Большой текст
 $font-size-xl: 58px;    // Очень большой текст
 $font-size-2xl: 80px;    // Заголовок секции
 
-// $font-size-base: 16px;    // Базовый размер текста
-// $font-size-lg: 32px;    // Большой текст
+$font-size-base-mobile: 12px;    // Базовый размер текста
+$font-size-lg-mobile: 16px;    // Большой текст
 $font-size-xl-mobile: 36px;    // Очень большой текст
 $font-size-2xl-mobile: 58px;    // Заголовок секции
 
