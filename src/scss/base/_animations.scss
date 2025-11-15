@@ -1,1 +1,9 @@
-// Animations 
+// Animations
+@keyframes rotate-circle {
+    from {
+        transform: translate(60%, -50%)
+    }
+    to {
+        transform: translate(60%, -50%) rotate(360deg);
+    }
+}
