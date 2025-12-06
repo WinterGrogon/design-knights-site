@@ -1,0 +1,124 @@
+.projects {
+
+    .container {
+        position: relative;
+    }
+
+    .section-name {
+        @include section-name-and-number($number: "2", $name: "Портфолио");
+    }
+
+    &__slider {
+
+        &:has(.projects__switchers input#project1:checked) .projects__slides>.projects__slide:nth-child(1),
+        &:has(.projects__switchers input#project2:checked) .projects__slides>.projects__slide:nth-child(2),
+        &:has(.projects__switchers input#project3:checked) .projects__slides>.projects__slide:nth-child(3) {
+            flex-grow: 1;
+            filter: brightness(1);
+
+            label {
+                z-index: 2;
+            }
+        }
+
+        &:has(.projects__switchers input#project1:checked) .projects__btns>label[for="project1"],
+        &:has(.projects__switchers input#project2:checked) .projects__btns>label[for="project2"],
+        &:has(.projects__switchers input#project3:checked) .projects__btns>label[for="project3"] {
+            border-radius: 20px;
+            background: linear-gradient(-43.49deg, rgba(255, 5, 95, 1), rgba(10.625004768371582, 181.6874542236328, 255, 1) 100%), radial-gradient(198.71% 117.18% at 30% 112.99999999999999%, rgba(255, 84.2350082397461, 46.75, 1), rgba(255, 84.23497009277344, 46.75, 0) 100%);
+        }
+    }
+
+    &__switchers {
+        display: none;
+    }
+
+    &__btns {
+        display: flex;
+        margin-bottom: $grid-gap;
+
+        color: $white;
+        background-color: $black;
+        border-radius: 20px;
+
+        @media screen and (max-width: $breakpoint-md) {
+            flex-direction: column;
+            row-gap: 8px;
+            background-color: transparent;
+        }
+    }
+
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-grow: 1;
+        font-weight: bold;
+        text-align: center;
+        height: 50px;
+
+        @media screen and (max-width: $breakpoint-md) {
+            background-color: $black;
+            border-radius: 20px;
+        }
+    }
+
+    &__slides {
+        display: flex;
+        height: max(50dvh, 200px);
+
+        @media screen and (max-width: $breakpoint-md) {
+            flex-direction: column;
+            height: max(50dvh, 900px);
+        }
+    }
+
+    &__slide {
+        width: 12.5%;
+        height: 100%;
+        flex: 0 0 auto;
+
+        filter: brightness(.2);
+        user-select: none;
+
+        transition: flex-grow .2s ease, filter .2s ease;
+
+        & > input[type="checkbox"] {
+            display: none;
+
+            &:checked {
+
+                & ~ .modal {
+                    opacity: 1;
+                    z-index: $z-index-modal;
+                }
+
+                .modal__content {
+                    top: 50dvh;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+
+        & > label:first-of-type {
+            @extend %full-size;
+
+            display: block;
+            position: absolute;
+            z-index: -1;
+        }
+
+        & > img {
+            @extend %full-size;
+
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+            height: 150 / 900 * 100%;
+        }
+    }
+
+}
