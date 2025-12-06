@@ -41,16 +41,17 @@ slidesImages.forEach((img, i) => {
                 <img src="${img.src}" alt="${img.alt}">
             </div>
         `;
-        document.body.appendChild(modal);
+        document.body.prepend(modal);
 
         // Добавляем класс после создания элемента
         requestAnimationFrame(() => {
             modal.classList.add('active');
         });
-
+        
         // Закрытие
         modal.addEventListener('click', () => {
             modal.classList.remove('active');
+            modal.style.zIndex = 1000;
             setTimeout(() => {
                 modal.remove();
             }, 500);
